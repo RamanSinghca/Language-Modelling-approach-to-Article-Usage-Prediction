@@ -68,7 +68,7 @@ def getGroundTruth():
     It retrieves all the text files contained in trainCorpusPath and adds them to object of NLTK corpus.
     output: An instance of NLTK Corpus.
 '''
-def getTainingCorpus():
+def getTrainingCorpus():
     # Get all the files stored in trainCorpusPath
     trianCorpus = PlaintextCorpusReader(trainCorpusPath, '.*\.txt', encoding='utf8')
     for infile in sorted(trianCorpus.fileids()):
@@ -78,7 +78,7 @@ def getTainingCorpus():
 ''' BiGram Language Model Creation and Probability calculation.
 
 '''
-cFreqBigram = nltk.ConditionalFreqDist(nltk.bigrams(w.lower() for w in getTainingCorpus().words()))
+cFreqBigram = nltk.ConditionalFreqDist(nltk.bigrams(w.lower() for w in getTrainingCorpus().words()))
 cProbBigram = nltk.ConditionalProbDist(cFreqBigram, nltk.MLEProbDist)
 
 
