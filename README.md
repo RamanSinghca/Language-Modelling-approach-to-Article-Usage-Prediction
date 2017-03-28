@@ -10,7 +10,7 @@ Two approaches to solve the problem of Article usage in english text.
 
 Evaluation Metrics: The final evaluation is preformed using standard Precision, Recall  and F1 measures. 
 
-Data is provided into !~/data folder.
+Data is provided into ~/data folder.
 1. ~/trainSet contains 19 charles Dickens writings.
 2. ~/testSet contains the file to be test.
 3. ~/trainModels contains the trained word2Vec model.
