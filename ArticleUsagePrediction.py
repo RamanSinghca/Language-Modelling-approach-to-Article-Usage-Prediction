@@ -8,7 +8,6 @@ Task: Article Usage Prediction in English text Using Language modeling and word2
 Main Method to Run : runPredictionEngine()
 
 '''
-
 import os
 import nltk
 import random
@@ -88,7 +87,7 @@ cProbBigram = nltk.ConditionalProbDist(cFreqBigram, nltk.MLEProbDist)
      Input: Suffix- String Token
      output:
      0 if Article prediction is "a"
-     1 if article prediction is "the"
+     1 if Article prediction is "the"
 '''
 
 def getPredictionByLanguageModel(suffix):
@@ -97,8 +96,7 @@ def getPredictionByLanguageModel(suffix):
         elif cProbBigram["a"].prob(suffix) < cProbBigram["the"].prob(suffix):
             return 1
     
-# *****************************************************************************************
-
+        
 # *****************************************************************************************
 # ***********************************  WordVec Approach ***********************************
 # *****************************************************************************************
@@ -114,7 +112,7 @@ trainedWord2VecModel = Word2Vec.load(word2VecModelPath)
      Input: Suffix- String Token
      output:
      0 if Article prediction is "a"
-     1 if article prediction is "the"
+     1 if Article prediction is "the"
 '''
 def getPredictionByWord2Vec(suffix):
     
@@ -127,12 +125,10 @@ def getPredictionByWord2Vec(suffix):
         coinToss=random.random()        
         return 0 if 0<coinToss<0.5  else  1
 
-# *****************************************************************************************
 
 # *****************************************************************************************
 # *********************************** Article Usage Prediction ****************************
 # *****************************************************************************************
-
 
 ''' Main Method to Run the prediction of article in test file provided by testFilePath
     Input: modelNo Integer
@@ -167,12 +163,10 @@ def predictArticle(modelNo):
     print('Next- Evaluation of Results ...')    
     return predictions
 
-# *****************************************************************************************
 
 # *****************************************************************************************
 # *********************************** Results and Evaluation ******************************
 # *****************************************************************************************
-
 
 ''' Run this Method for Classification results.
     Input: ModelNo( integer)
@@ -185,17 +179,16 @@ def predictArticle(modelNo):
 '''
 def runPredictionEngine(modelNo):
     print('Getting the ground Truth Labels from '+ orgFileName+'.txt')
-    a=getGroundTruth()
+    groundTruth=getGroundTruth()
     
     if modelNo==1:
         print('Loading the Language Model .... ')
     elif modelNo==2:
         print('Loading the Word2Vec Model from the Disk....')
-
         
-    b=predictArticle(modelNo)
+    predicted=predictArticle(modelNo)
     
-    print (metrics.classification_report(a,b))
+    print (metrics.classification_report(groundTruth,predicted))
 
 # *****************************************************************************************
 
