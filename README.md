@@ -6,7 +6,7 @@ Problem Statement: Given a text, predict the correct usage of article "a" and "t
 Two approaches to solve the problem of Article usage in english text.
 
 1. Language modelling approach 
-2. Word2Vec Approach
+2. Word Embedding (Word2Vec) Approach
 
 Evaluation Metrics: The final evaluation is preformed using standard Precision, Recall  and F1 measures. 
 
