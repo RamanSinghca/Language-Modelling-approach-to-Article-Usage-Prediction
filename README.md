@@ -6,18 +6,14 @@ Problem Statement: Given a text, predict the correct usage of Article in an obfu
 Two approaches to solve the problem of Article usage in english text.
 
 1. Language modelling approach 
-and
 2. Word2Vec Approach
 
 Evaluation Metrics: The final evaluation is preformed using standard Precision, Recall  and F1 measures. 
 
 Data is provided into !~/data folder.
 1. ~/trainSet contains 19 charles Dickens writings.
-and
 2. ~/testSet contains the file to be test.
-and
 3. ~/trainModels contains the trained word2Vec model.
-and
 4. ~/originalSet contains the original version of file to be tested
 
 
