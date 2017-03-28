@@ -1,7 +1,7 @@
 # Language-Modelling-approach-to-Article-Usage-Prediction
 Language-Modelling-approach-to-Article-Usage-Prediction
 
-Problem Statement: Given a text, predict the correct usage of Article in an obfuscated text and compare it with original 
+Problem Statement: Given a text, predict the correct usage of article "a" and "the" in an obfuscated text and compare it with the original text. 
 
 Two approaches to solve the problem of Article usage in english text.
 
